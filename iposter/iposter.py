@@ -11,7 +11,7 @@ def PosterSection(title, color, children=[], height=None):
         dbc.Card([
             html.H4(title,style={"color":"white","text-align":"center","font-size":"66px"}),
         ],style={"background":color,"padding":"20px"}),
-        dbc.Card(dbc.Container(children,fluid=True),style={"padding":"20px"})],
+        dbc.Card(dbc.Container(children,fluid=True),style={"padding":"5px"})],
         body=True),style=style)
     return layout
 
@@ -28,16 +28,16 @@ def PosterColumn(sections):
 def Header(title, authors, institutions, logo, banner_color):
     layout = dbc.Card(
     dbc.Row(
-    [dbc.Col([dbc.Row(html.Img(src=logo, style={'height':'3.5in', "width":"3.5in","padding-left":"100px"}))],width=1.5),
+    [dbc.Col([dbc.Row(html.Img(src=logo, style={'height':'2.5in', "width":"3.5in","padding-left":"50px",'padding-top':'30px'}))],width=1.5),
      dbc.Col([dbc.Row(html.Img(src="logo1.png", style={'height':'1.75in', "width":"5in","padding-left":"50px"})),
-              dbc.Row(html.Img(src="logo2.png", style={'height':'1.75in', "width":"5in", "padding-left":"50px"}))],width=1.5),
+              dbc.Row(html.Img(src="logo2.png", style={'height':'1.7in', "width":"5in", "padding-left":"50px"}))],width=1.5),
      dbc.Col([
         dbc.Row(dbc.Container(title,fluid=True)),
         dbc.Row(dbc.Container(authors,fluid=True)),
         dbc.Row(dbc.Container(institutions,fluid=True)),
         ],style={"padding-top":"25px"}),
-     dbc.Col(html.Img(src="qrcode.png", style={'height':'4in', "width":"4in"}),style={"display":"flex","justify-content":"flex-end","padding-right":"80px"},width=1.5)],
-    style={'height':'4in', "width":"42in"},justify="center"),
+     dbc.Col(html.Img(src="qrcode.png", style={'height':'3in', "width":"3in"}),style={"display":"flex","justify-content":"flex-end","padding-right":"80px"},width=1.5)],
+    style={'height':'3.2in', "width":"42in"},justify="center"),
     style={"background": banner_color},
     body=True)
     return layout
@@ -94,12 +94,12 @@ class iPoster:
         childs = []
         if text: childs.append(html.P(text, style={"font-size":"34px"}))
         if img:
-            childs.append(html.Img(src=img["filename"], style={"height":img["height"], "width":img["width"]}))
+            childs.append(html.Img(src=img["filename"], style={"height":img["height"], "width":img["width"],'textAlign': 'center'}))
             self.figure_counter += 1
             childs.append(html.P("Figure {}. ".format(self.figure_counter), style={"font-size":"28px", "font-weight":"bold"}))
             childs.append(html.P(img["caption"], style={"font-size":"28px"}))
         if plot:
-            childs.append(dcc.Graph(figure=plot["fig"]))
+            childs.append(html.Iframe(src=plot["filename"], style={"height":plot["height"], "width":plot["width"]}))
             self.figure_counter += 1
             childs.append(html.P("Figure {}. ".format(self.figure_counter), style={"font-size":"28px", "font-weight":"bold"}))
             childs.append(html.P(plot["caption"], style={"font-size":"28px"}))
