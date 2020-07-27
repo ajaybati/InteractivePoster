@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 
 #--
 def PosterSection(title, color, children=[], height=None):
-    style = {"padding-bottom":"25px"}
+    style = {"padding-bottom":"10px"}
     if height: style["height"] = height
     layout = dbc.Row(
     dbc.Card([

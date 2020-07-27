@@ -23,7 +23,7 @@ RUN_LOCAL=False
 def create_poster():
 
     # Instanitate an iPoster
-    my_poster = iPoster(title="Transfer Learning with BERT model and Search Algorithm", # Title of your poster
+    my_poster = iPoster(title="Transfer Learning with BERT Model and Search Algorithm", # Title of your poster
                         authors_dict={"Ajay Bati" : "Mission San Jose High School", # Authors in {student, mentors, PI} order
                                       "Rafael Zamora-Resendiz" : "Lawrence Berkeley National Laboratory",
                                       "Shirley Wang" : "Lawrence Berkeley National Laboratory",
@@ -35,7 +35,7 @@ def create_poster():
 
     # Add sections to first column then add new column
     my_poster.add_section(title="Research Question",
-        text="How will BERT's word embeddings affect the fuzzy search for similar patients when compared to earlier methods, such as Regular Expressions?")
+        text="How will BERT's word embeddings affect the fuzzy search performance for similar patients when compared to earlier methods, such as Regular Expressions?")
     my_poster.add_section(title="Abstract",color='#00cc63',
         text="The recent increase in data in the medical community, such as Electronic Health Records (EHR), allows us to access various features of patients over long periods of time.\
         Containing discharge summaries of patients diagnosed with one of the Diseases of Despair diagnoses - a set of diagnoses, including drug overdose, suicide, and alcohol-liver disease, relating to mental and behavioral issues for people who experience despair- \
@@ -68,7 +68,7 @@ def create_poster():
     plot={"filename": 'embedeaaVisual.html',"height":"7in", "width":"12in", "caption": "2D Vector Representations of word embeddings"})
 
     my_poster.add_section(title="Acknowledgements",
-        text="Thank you Dr. Crivelli, Dr. Liu, Rafael Zamora-Resendiz, Shirley Wang, and all team members for helping this work. Thanks to the support of US Department of Energy, Lawrence Berkeley National Laboratory, and the Veterans' Affairs Million Veteran Program.")
+        text="Thank you Destinee Morrow, Victor Adewopo, Rachel Thomas, Eric Vazquez Olivas, Praneetha Gouni, Masakatsu Watanabe, and everyone else for supporting this work. Thanks to the support of US Department of Energy, Lawrence Berkeley National Laboratory, the VA Million Veteran Program, and Dr. Leung's SHI program.")
 
     my_poster.next_column()
 
