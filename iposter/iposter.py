@@ -4,14 +4,14 @@ import dash_bootstrap_components as dbc
 
 #--
 def PosterSection(title, color, children=[], height=None):
-    style = {"padding-bottom":"10px"}
+    style = {"padding-bottom":"5px"}
     if height: style["height"] = height
     layout = dbc.Row(
     dbc.Card([
         dbc.Card([
             html.H4(title,style={"color":"white","text-align":"center","font-size":"66px"}),
         ],style={"background":color,"padding":"20px"}),
-        dbc.Card(dbc.Container(children,fluid=True),style={"padding":"5px"})],
+        dbc.Card(dbc.Container(children,fluid=True),style={"padding":"2px"})],
         body=True),style=style)
     return layout
 
@@ -84,9 +84,9 @@ class iPoster:
             insts += [s]
             insts += [", "]
         insts = insts[:-1]
-        title = html.H1(self.poster_title, style={"text-align":"center","font-size":"89px","color":self.text_color})
-        authors = html.H2(authors,style={"text-align":"center","font-size":"59px","color":self.text_color})
-        institutions = html.H3(insts, style={"text-align":"center","font-size":"48px","color":self.text_color})
+        title = html.H1(self.poster_title, style={"text-align":"center","font-size":"89px","color":self.text_color, "font-family": "Arial", "font-weight":"bold"})
+        authors = html.H2(authors,style={"text-align":"center","font-size":"59px","color":self.text_color, "font-family": "Arial", "font-weight":"bold"})
+        institutions = html.H3(insts, style={"text-align":"center","font-size":"48px","color":self.text_color, "font-family": "Arial", "font-weight":"bold"})
         return title, authors, institutions
 
     #--
