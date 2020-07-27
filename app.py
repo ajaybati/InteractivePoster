@@ -13,7 +13,7 @@ from iposter.iposter import iPoster
 import iposter.colors as colors
 
 #*** Run Local Flag ***
-RUN_LOCAL=False
+RUN_LOCAL=True
 
 # ******************Define Your Interactive Poster Here***************
 # The following shows a sample interactive poster.
@@ -57,7 +57,7 @@ def create_poster():
         text="BERT (Bidirectional Encoder Representations from Transformers) makes use of transformers, an attention mechanism that is able to learn contextual relations between words using surrouding text.\
         It requires a '[MASK]' to inidicate what its predicting. After converting inputs into vectors, it passes through the classification layer and is multiplied to an embedding vocabulary matrix.\
         The encoder was trained so its word embeddings could be used to conduct our search.",
-        img={"filename":"bert.png", "height":"6in", "width":"8in", "caption":"BERT architecture"})
+        img={"filename":"bert.png", "height":"6in", "width":"8in", "caption":"BERT architecture Photo Credit: Rani Horev"})
     # my_poster.add_section(title="Images",
     #     text="Save your image in the assets directory and set img to the filename.",
     #     img={"filename":"test.png", "height":"6in", "width":"8in", "caption":"Text for figure caption."})
@@ -73,7 +73,7 @@ def create_poster():
     my_poster.next_column()
 
     # Add sections to third column then add new column
-    my_poster.add_section(title="Cosine Distances",color='#00cc63', text="This heatmap represents an example of how BERT uses its internal representations for two different texts. After tokenizing each one, they are compared using a cosine distance, taking the harmonic mean, and setting a threshold for the fuzzy search. Dark patches are subwords that are closesly related.",plot={"filename": 'cos_dist.html',"height":"7in", "width":"12in", "caption": "interactive plot figure caption"})
+    my_poster.add_section(title="Cosine Distances",color='#00cc63', text="This heatmap represents an example of how BERT uses its internal representations for two different texts. After tokenizing each one, they are compared using a cosine distance, taking the harmonic mean, and setting a threshold for the fuzzy search. Dark patches are subwords that are closesly related.",plot={"filename": 'cos_dist.html',"height":"7in", "width":"12in", "caption": "Heatmap of Cosine Distances - dark Patches are closely related words."})
     my_poster.add_section(title="BERT",
         text="Down below is an overarching representation of the pipeline while querying UMLS. The search query is passed to the metathesaurus to search for similar concepts with a fuzzy search (using the boolean function).\
         It then returns a lexicon with these concepts, which will be used again to query notes to capture similar patients.",
