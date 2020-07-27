@@ -13,7 +13,7 @@ from iposter.iposter import iPoster
 import iposter.colors as colors
 
 #*** Run Local Flag ***
-RUN_LOCAL=True
+RUN_LOCAL=False
 
 # ******************Define Your Interactive Poster Here***************
 # The following shows a sample interactive poster.
