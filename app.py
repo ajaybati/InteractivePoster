@@ -68,7 +68,7 @@ Discharge summaries were compiled from patients with ICD (International Classifi
     my_poster.next_column()
 
     # Add sections to third column then add new column
-    my_poster.add_section(title="Cosine Distances",color='#00cc63', text="This heatmap is a representation of BERT using its internal representations for two different texts. After passing each text through the model, they are compared using a cosine distance, taking the harmonic mean for each comparison, and setting a threshold for the fuzzy search.",plot={"filename": 'cos_dist.html',"height":"7in", "width":"10in", "caption": "The darker \
+    my_poster.add_section(title="Cosine Distances",color='#00cc63', text="This heatmap is a representation of BERT using its internal representations for two different texts. After passing each text through the model, they are compared using a cosine distance, taking the harmonic mean for each comparison, and setting a threshold for the fuzzy search.",plot={"filename": 'realcosdist.html',"height":"7in", "width":"10in", "caption": "The darker \
     patches are subwords that have a low cosine distance and high similarity while lighter ones represent less correlated words. There are 128x128 comparisons and each are used to compute the harmonic mean for the threshold (not all text comparisons are shown)."})
     my_poster.add_section(title="BERT",
         text="The BERT model uses its word embeddings to build a comprehensive lexicon from UMLS. This lexicon is queried again to match against similar notes.",
